@@ -43,7 +43,7 @@ const AddForm: React.FC = () => {
     reset,
     formState: { errors },
   } = useForm<FormData>({
-    // resolver: yupResolver(FormSchema),
+    resolver: yupResolver(FormSchema),
     defaultValues: updatedUser?.length > 0 ? updatedUser?.[0] : initialValues,
   });
   const onSubmit = () => {
