@@ -49,7 +49,6 @@ const AddForm: React.FC = () => {
   const onSubmit = () => {
     setIsModalOpen(true);
   };
-  console.log("user>>",users)
   const onSave = (data: FormData) => {
     if (data) {
       if (updatedUser && updatedUser?.length > 0) {
@@ -98,16 +97,18 @@ const AddForm: React.FC = () => {
         <h1 className="text-3xl font-bold mb-4">
           {updatedUser?.length > 0 ? "Edit User" : "Add User"}
         </h1>
-        <button
-          type="button"
-          onClick={() => {
-            reset();
-            setSelectedImage(null);
-          }}
-          className="px-4 py-1 bg-blue-500 text-white rounded"
-        >
-          Reset Form
-        </button>
+        {!updatedUser && (
+          <button
+            type="button"
+            onClick={() => {
+              reset();
+              setSelectedImage(null);
+            }}
+            className="px-4 py-1 bg-blue-500 text-white rounded"
+          >
+            Reset Form
+          </button>
+        )}
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
@@ -156,6 +157,9 @@ const AddForm: React.FC = () => {
             )}
           </div>
         </div>
+        <span className="text-red-500">
+          {!selectedImage && "Image is a required field"}
+        </span>
 
         <div>
           <label>Gender</label>

@@ -29,13 +29,14 @@ const Home: React.FC = () => {
             Add User
           </button>
         </div>
-        <div className="grid grid-cols-9 gap-4 w-full p-4">
+        <div className="grid grid-cols-10 gap-6 w-full p-6 overflow-x-scroll no-scrollbar">
           <div className=" font-bold">ID</div>
           <div className=" font-bold">First Name</div>
           <div className=" font-bold">Last Name</div>
           <div className=" font-bold">Photo</div>
           <div className=" font-bold">Gender</div>
           <div className="font-bold">Email</div>
+          <div className="font-bold">City</div>
           <div className=" font-bold">Mobile Number</div>
           <div className=" font-bold">Date of Birth</div>
           <div className=" font-bold">Action</div>
@@ -50,6 +51,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="col-span-1">{user.gender}</div>
                 <div className="col-span-1">{user.email}</div>
+                <div className="col-span-1">{user.city}</div>
                 <div className="col-span-1">{user.mobileNumber}</div>
                 <div className="col-span-1">{user.dateOfBirth}</div>
                 <div className="flex gap-2">
